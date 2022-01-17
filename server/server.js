@@ -3,7 +3,7 @@ const {randRoom, randPiece} = require('./utilities/utils')
 const Player = require('./utilities/player')
 const Board = require('./utilities/board')
 
-const cors = require('cors')
+//const cors = require('cors')
 //set up express server
 const express = require('express')
 const http = require('http')
@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 4000
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
-
-app.use(cors())
+const publicPath = path.join(__dirname, '..', 'public');
+app.use(express.static(publicPath));
 
 //Store the room ids mapping to the room property object 
 //The room property object looks like this {roomid:str, players:Array(2)}
