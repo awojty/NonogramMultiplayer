@@ -1,0 +1,11 @@
+.puzzleSelect{
+    width: var(--square-width);
+    height: var(--square-width);
+    min-width: 100px;
+    min-height: 100px;
+    border: 3px solid rgba(255,255,255,0.9);
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+    background: white;
+  }
