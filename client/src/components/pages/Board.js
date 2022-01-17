@@ -57,7 +57,7 @@ class Board extends Component {
   componentDidMount() {
     //Getting the room and the username information from the url
     //Then emit to back end to process
-    this.socket = io(ENDPOINT)
+    this.socket = io(ENDPOINT,  {transports: ['websocket']})
     const {room, name, gameid} = qs.parse(window.location.search, {
       ignoreQueryPrefix: true
      })
