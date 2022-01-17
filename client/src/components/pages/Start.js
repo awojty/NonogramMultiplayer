@@ -11,7 +11,7 @@ import ChooseGame from '../functional/ChooseGame.js'
 import {Redirect} from 'react-router-dom'
 
 import socketIOClient from 'socket.io-client'
-const ENDPOINT = 'https://multi-nonogram.herokuapp.com/'
+const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 
 class Start extends React.Component {

@@ -11,7 +11,7 @@ import uuid from 'react-uuid'
 
 import io from 'socket.io-client'
 import qs from 'qs'
-const ENDPOINT = 'https://multi-nonogram.herokuapp.com/'
+const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 
 //TODO - oplaed frmo json or db 
