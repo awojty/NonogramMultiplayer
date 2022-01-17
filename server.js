@@ -15,7 +15,9 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 const publicPath = path.join(__dirname, '..', 'public');
-app.use(express.static(publicPath));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 
 //Store the room ids mapping to the room property object 
 //The room property object looks like this {roomid:str, players:Array(2)}
