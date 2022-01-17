@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 4000
 
 const app = express()
 const server = http.createServer(app)
-const io = socketIO(server, {transports: ['websocket']});
+const io = socketio(server, {transports: ['websocket']});
 //const publicPath = path.join(__dirname, '..', 'public');
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
