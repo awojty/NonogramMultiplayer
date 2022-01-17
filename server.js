@@ -2,7 +2,7 @@
 const {randRoom, randPiece} = require('./utilities/utils')
 const Player = require('./utilities/player')
 const Board = require('./utilities/board')
-
+const path = require('path');
 const cors = require('cors')
 //set up express server
 const express = require('express')
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 4000
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
-const publicPath = path.join(__dirname, '..', 'public');
+//const publicPath = path.join(__dirname, '..', 'public');
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
