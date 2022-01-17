@@ -3,7 +3,7 @@ const {randRoom, randPiece} = require('./utilities/utils')
 const Player = require('./utilities/player')
 const Board = require('./utilities/board')
 
-//const cors = require('cors')
+const cors = require('cors')
 //set up express server
 const express = require('express')
 const http = require('http')
