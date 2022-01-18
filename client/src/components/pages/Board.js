@@ -13,9 +13,8 @@ import ActivePlayers from "../functional/ActivePlayers"
 import io from 'socket.io-client'
 import qs from 'qs'
 
-
-//const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
-const ENDPOINT = 'http://localhost:4000/'
+const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
+//const ENDPOINT = 'http://localhost:4000/'
 
 //TODO - oplaed frmo json or db 
 const HEIGHT = 10

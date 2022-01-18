@@ -16,8 +16,8 @@ import {Redirect} from 'react-router-dom'
 
 import socketIOClient from 'socket.io-client'
 //TODO - choises a game froma  alink 
-const ENDPOINT = 'http://localhost:4000/'
-//const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
+//const ENDPOINT = 'http://localhost:4000/'
+const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 class Invitation extends React.Component {
     constructor(props){
