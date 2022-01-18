@@ -7,9 +7,8 @@ import Error from '../functional/Error'
 import logo from './logo.png'
 import ChooseGame from '../functional/ChooseGame.js'
 import Input from '../functional/Input.js';
-import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
-
+import { Component } from 'react';
+import ChoiceButton from "../functional/ChoiceButton"
 
 import qs from 'qs'
 
@@ -17,8 +16,8 @@ import {Redirect} from 'react-router-dom'
 
 import socketIOClient from 'socket.io-client'
 //TODO - choises a game froma  alink 
-//const ENDPOINT = 'http://localhost:4000/'
-const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
+const ENDPOINT = 'http://localhost:4000/'
+//const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 class Invitation extends React.Component {
     constructor(props){
@@ -52,6 +51,8 @@ class Invitation extends React.Component {
             gameid:gameid
         
         }
+
+        this.setState(newState)
             
 
 

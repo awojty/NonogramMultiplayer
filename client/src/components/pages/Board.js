@@ -14,8 +14,8 @@ import io from 'socket.io-client'
 import qs from 'qs'
 
 
-const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
-//const ENDPOINT = 'http://localhost:4000/'
+//const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
+const ENDPOINT = 'http://localhost:4000/'
 
 //TODO - oplaed frmo json or db 
 const HEIGHT = 10
@@ -436,7 +436,7 @@ class Board extends Component {
       };
 
       const link = "http://multi-nonogram.herokuapp.com/invitation?room="+this.state.room+"&gameid="+this.state.gameid;
-      console.loh("link", link);
+      console.log("link", link);
       return(
         <>
           {/* <Wait display={this.state.waiting} room={this.state.room}/> */}
