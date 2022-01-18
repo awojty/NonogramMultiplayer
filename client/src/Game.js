@@ -9,7 +9,8 @@ const Game = () => (
     <Router>
         <Route path='/' exact component={Start} />
         <Route path='/game' component={Board} />
-        <Invitation path='/invitation/:room/:gameid'/>
+        <Route path='/invitation/:room/:gameid' component={Invitation} />
+        {/* <Invitation path='/invitation/:room/:gameid'/> */}
         
 
     </Router>
