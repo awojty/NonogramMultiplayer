@@ -119,9 +119,9 @@ class Start extends React.Component {
         this.setState({loading: true})
         if (this.validate()){
             if (this.state.newGame){
-                this.socket.emit('newGame');
+                this.socket.emit('newGame', {puzzleId:this.state.selectedGame});
             }else{
-                this.socket.emit('joining', {room:this.state.room})
+                this.socket.emit('joining', {room:this.state.room, puzzleId:this.state.selectedGame})
             }
         }else{
             setTimeout(()=>this.setState({loading: false }), 500)

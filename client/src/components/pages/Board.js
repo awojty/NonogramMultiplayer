@@ -8,9 +8,12 @@ import ScoreBoard from '../functional/ActivePlayers'
 import PlayAgain from '../functional/PlayAgain'
 import jsonData from "../functional/puzzles.json"
 import uuid from 'react-uuid'
+import ActivePlayers from "../functional/ActivePlayers"
 
 import io from 'socket.io-client'
 import qs from 'qs'
+
+
 const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 
@@ -18,7 +21,6 @@ const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 const HEIGHT = 10
 const WIDTH = 10
 
-import ActivePlayers from "../functional/ActivePlayers"
 
 
 class Board extends Component {
@@ -64,12 +66,14 @@ class Board extends Component {
     const {room, name, gameid} = qs.parse(window.location.search, {
       ignoreQueryPrefix: true
      })
+
+    console.log("gameid", gameid);
     
     let newState={
       room:room,
       name:name.abbrev,
-      columns:jsonData['puzzles'][0]["columns"],
-      rows:jsonData['puzzles'][0]["rows"]
+      columns:jsonData['puzzles'][gameid]["columns"],
+      rows:jsonData['puzzles'][gameid]["rows"]
     }
     this.setState(newState)
 
