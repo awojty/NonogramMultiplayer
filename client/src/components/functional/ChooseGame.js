@@ -26,10 +26,12 @@ class ChooseGame extends Component {
 
         return(
             <>
+            <div>Clock on the puzzle you want to complete</div>
             <div>
                 {this.state.data.map(element =>  
                 <PuzzleSelect
                     key = {element.id}
+                    selectedGame = {this.props.selectedGame}
                     
                     choice ={element.id}
                     onChoice={this.props.onChoice}
@@ -42,7 +44,7 @@ class ChooseGame extends Component {
 
                     </PuzzleSelect>)}
                 </div>
-                <div onClick={this.props.onSubmit}>Submit</div>
+                <div className ="submitButton" onClick={this.props.onSubmit}>Submit</div>
             </>
 
 

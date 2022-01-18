@@ -10,7 +10,9 @@ class PuzzleSelect extends Component {
 
     render(){
 
-        if(this.props.selectedGame === this.props.id){
+        console.log(this.props)
+
+        if(this.props.selectedGame === this.props.choice){
             return(
                 <div className="puzzleSelect" style={{backgroundColor: 'yellow'}} onClick={this.props.onChoice.bind(this, this.props.choice)}>
                     <div>width: {this.props.width}</div>

@@ -22,7 +22,7 @@ body{
   justify-content: center;
   
   background: var(--dark-blue);
-  background: linear-gradient(180deg, var(--dark-blue) 80%, var(--mid-blue) 100%);
+  background: var(--mid-blue);
   background-repeat: no-repeat;
   overflow: none;
   
@@ -38,6 +38,17 @@ body{
   width: max-content;
   min-height: min-content;
   grid-template-columns: repeat(3, auto);
+}
+
+
+.submitButton{
+  min-width: fit-content;
+  min-height: fit-content;
+  max-width: 100px;
+  max-height: 100px;
+  justify-content: center;
+  background-color: #b3cde0;
+
 }
 
 
