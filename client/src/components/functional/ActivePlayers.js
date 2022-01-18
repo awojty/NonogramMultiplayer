@@ -1,5 +1,5 @@
 import React from 'react'
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 
 class ActivePlayers extends Component {
