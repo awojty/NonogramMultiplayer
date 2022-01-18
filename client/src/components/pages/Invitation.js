@@ -13,6 +13,7 @@ import ChoiceButton from "../functional/ChoiceButton"
 import qs from 'qs'
 
 import {Redirect} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 import socketIOClient from 'socket.io-client'
 //TODO - choises a game froma  alink 
@@ -41,9 +42,15 @@ class Invitation extends React.Component {
         this.socket = socketIOClient(ENDPOINT, {transports: ['websocket']})
 
         
-        const {room, gameid} = qs.parse(window.location.search, {
-            ignoreQueryPrefix: true
-        })
+        // const {room, gameid} = qs.parse(window.location.search, {
+        //     ignoreQueryPrefix: true
+        // })
+
+        
+
+
+  // get the username from route params
+        const { room, gameid } = useParams();
 
         let newState={
             room:room,

@@ -434,7 +434,7 @@ class Board extends Component {
         
       };
 
-      const link = "http://multi-nonogram.herokuapp.com/invitation?room="+this.state.room+"&gameid="+this.state.gameid;
+      const link = "http://multi-nonogram.herokuapp.com/invitation/"+this.state.room+"/"+this.state.gameid;
       console.log("link", link);
       return(
         <>
