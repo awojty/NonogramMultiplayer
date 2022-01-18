@@ -7,6 +7,11 @@ import Error from '../functional/Error'
 import logo from './logo.png'
 import ChooseGame from '../functional/ChooseGame.js'
 import Input from '../functional/Input.js';
+import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
+
+
+import qs from 'qs'
 
 import {Redirect} from 'react-router-dom'
 
