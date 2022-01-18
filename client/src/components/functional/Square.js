@@ -28,7 +28,8 @@ class Square extends Component {
 
       }else if(this.props.squareColor == 2){
         return (
-          <div className="square" style={{backgroundColor: 'blue'}} onClick={this.props.onClick.bind(this, this.props.height, this.props.width)}>
+          <div className="square" style={{backgroundColor: 'white'}} onClick={this.props.onClick.bind(this, this.props.height, this.props.width)}>
+            <div className="dot"></div>
   
           </div>
         );
