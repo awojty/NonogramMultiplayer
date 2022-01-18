@@ -12,10 +12,10 @@ import {Redirect} from 'react-router-dom'
 
 import socketIOClient from 'socket.io-client'
 
-const ENDPOINT = 'http://localhost:4000/'
+//const ENDPOINT = 'http://localhost:4000/'
+const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 class Start extends React.Component {
-    //const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
     constructor(props){
         super(props)
         this.state = {
