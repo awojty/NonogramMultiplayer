@@ -43,6 +43,7 @@ class Board extends Component {
       statusMessage: '',
       currentPlayerScore: 0,
       opponentPlayer: [],
+      activePlayers:[],
       //State to check when a new user join
       waiting: false,
       joinError: false,
@@ -96,7 +97,7 @@ class Board extends Component {
     })
 
     //Game play logic events
-    this.socket.on('update', ({gameState}) => this.handleUpdate(gameState))
+    this.socket.on('update', ({gameState, activePlayers}) => this.handleUpdate(gameState, activePlayers))
     this.socket.on('winner', ({gameState,id}) => this.handleWin(id, gameState))
     this.socket.on('draw', ({gameState}) => this.handleDraw(gameState))
 
@@ -129,6 +130,7 @@ class Board extends Component {
 
     //render new board based on the one returned by the server
     this.setBoard(gameState)
+    this.setState({activePlayers:activePlayers})
     
     this.setMessage()
   }
@@ -145,6 +147,7 @@ class Board extends Component {
       opponent[1] = opponentScore
       this.setState({opponentPlayer:opponent, statusMessage:`${this.state.opponentPlayer[0]} Wins`})
     }
+   
     this.setState({end:true})
   }
 
@@ -429,7 +432,7 @@ class Board extends Component {
             {squareArray}
           </div>
           <div>{this.state.room}</div>
-          {/* <ScoreBoard data={{player1:['You', this.state.currentPlayerScore], player2:[this.state.opponentPlayer[0], this.state.opponentPlayer[1]]}}/> */}
+          <ActivePlayers players={this.state.activePlayers}/>
           <PlayAgain end={this.state.end} onClick={this.playAgainRequest}/>
         </>
       )

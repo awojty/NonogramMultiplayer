@@ -182,7 +182,7 @@ class Start extends React.Component {
                     );
                 case(3):
                     return (
-                        <ChooseGame logo={logo} onChoice={this.onChooseGame} onSubmit={this.onSubmitSelectedGame}/>
+                        <ChooseGame logo={logo} selectedGame={this.state.selectedGame} onChoice={this.onChooseGame} onSubmit={this.onSubmitSelectedGame}/>
                     );
                 default:
                     console.log(this.state.step)

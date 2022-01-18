@@ -150,7 +150,10 @@ io.on('connection', socket =>{
     //Listener event for each move and emit different events depending on the state of the game
     socket.on('move', ({room,  height,width}) => {
         currentBoard = rooms.get(room).board
+
         currentBoard.move(height,width)
+
+        currentPlayers  = rooms.get(room).players
         // if (currentBoard.checkWinner(piece)){
         //     io.to(room).emit('winner', {gameState:currentBoard.game, id:socket.id})
         // }else if(currentBoard.checkDraw()){
@@ -158,7 +161,7 @@ io.on('connection', socket =>{
         // }else{
             //currentBoard.switchTurn()
         console.log('update', {gameState:currentBoard.game})
-            io.to(room).emit('update', {gameState:currentBoard.game})
+            io.to(room).emit('update', {gameState:currentBoard.game, activePlayers:currentPlayers})
         //}
     })
 

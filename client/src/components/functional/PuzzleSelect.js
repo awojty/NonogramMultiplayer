@@ -10,15 +10,35 @@ class PuzzleSelect extends Component {
 
     render(){
 
-        return(
-            <div className="puzzleSelect" onClick={this.props.onChoice.bind(this, this.props.choice)}>
-                <div>width {this.props.width}</div>
-                <div>height {this.props.height}</div>
+        if(this.props.selectedGame === this.props.id){
+            return(
+                <div className="puzzleSelect" style={{backgroundColor: 'yellow'}} onClick={this.props.onChoice.bind(this, this.props.choice)}>
+                    <div>width: {this.props.width}</div>
+                    <div>height: {this.props.height}</div>
+    
+                </div>
+    
+    
+            )
 
-            </div>
 
+        }else{
 
-        )
+            return(
+                <div className="puzzleSelect" style={{backgroundColor: 'white'}} onClick={this.props.onChoice.bind(this, this.props.choice)}>
+                    <div>width: {this.props.width}</div>
+                    <div>height: {this.props.height}</div>
+    
+                </div>
+    
+    
+            )
+
+        }
+
+        
+
+       
     }
 
 }
