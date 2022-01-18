@@ -33,6 +33,10 @@ class Start extends React.Component {
     
     componentDidMount(){
         this.socket = socketIOClient(ENDPOINT, {transports: ['websocket']})
+
+        //this.socket = socketIOClient(ENDPOINT)
+
+
         this.socket.on('newGameCreated', (room) =>{
             this.setState({serverConfirmed:true, room:room})
         })

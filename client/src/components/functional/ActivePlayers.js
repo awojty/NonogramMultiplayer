@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-
+import uuid from 'react-uuid'
 
 class ActivePlayers extends Component {
     constructor(props){
@@ -13,7 +13,7 @@ class ActivePlayers extends Component {
             <div className='score-board'>
                  <h1 className="score-title">Active Players</h1>
                 {this.props.players.map(element=>
-                <div>{element}</div>
+                <div key={uuid()}>{element.name}</div>
     
     
     

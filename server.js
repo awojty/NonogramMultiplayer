@@ -10,14 +10,18 @@ const http = require('http')
 const socketio = require('socket.io')
 
 const PORT = process.env.PORT || 4000
-
+//const PORT = 4000
 const app = express()
 const server = http.createServer(app)
-const io = socketio(server, {transports: ['websocket']});
-//const publicPath = path.join(__dirname, '..', 'public');
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+const io = socketio(server, {
+    allowEIO3: true,
+    
+    transports: ['websocket']});
+//const io = socketio(server);
 
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+//app.use(cors())
 
 //Store the room ids mapping to the room property object 
 //The room property object looks like this {roomid:str, players:Array(2)}
