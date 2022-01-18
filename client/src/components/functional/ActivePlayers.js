@@ -1,7 +1,7 @@
 import React from 'react'
 import Score from './Score'
 
-export default function ScoreBoard({data}) {
+export default function ActivePlayers({data}) {
     return (
         <div className='score-board'>
              <h1 className="score-title">Active Players</h1>

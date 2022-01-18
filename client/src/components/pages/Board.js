@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 import Square from '../functional/Square'
 import Wait from '../functional/Wait'
 import Status from '../functional/Status'
-import ScoreBoard from '../functional/ScoreBoard'
+import ScoreBoard from '../functional/ActivePlayers'
 import PlayAgain from '../functional/PlayAgain'
 import jsonData from "../functional/puzzles.json"
 import uuid from 'react-uuid'
@@ -17,6 +17,8 @@ const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 //TODO - oplaed frmo json or db 
 const HEIGHT = 10
 const WIDTH = 10
+
+import ActivePlayers from "../functional/ActivePlayers"
 
 
 class Board extends Component {
@@ -126,7 +128,7 @@ class Board extends Component {
   }
 
   //Setting the states each move when the game haven't ended (no wins or draw)
-  handleUpdate(gameState){
+  handleUpdate(gameState, activePlayers){
 
     //render new board based on the one returned by the server
     this.setBoard(gameState)
