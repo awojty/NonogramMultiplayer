@@ -435,6 +435,8 @@ class Board extends Component {
         
       };
 
+      const link = "http://multi-nonogram.herokuapp.com/invitation?room="+this.state.room+"&gameid="+this.state.gameid;
+      console.loh("link", link);
       return(
         <>
           {/* <Wait display={this.state.waiting} room={this.state.room}/> */}
@@ -442,7 +444,8 @@ class Board extends Component {
           <div style={dropzoneStyle}>
             {squareArray}
           </div>
-          <div>{this.state.room}</div>
+          <div>Copy this link to invite a friend</div>
+          <div>{link}</div>
           <ActivePlayers players={this.state.activePlayers}/>
           <PlayAgain end={this.state.end} onClick={this.playAgainRequest}/>
         </>

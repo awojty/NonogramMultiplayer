@@ -59,6 +59,12 @@ class Board{
           state.every((position => this.game[position] === player))
         ))
     }
+
+
+    generateWinnerState(rows, columns){
+        //TODO - solves the nonogram and saves the solutino for a given game
+        return;
+    }
     
     checkDraw(){
         return this.game.every(value => value !== null)
