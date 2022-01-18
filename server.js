@@ -18,10 +18,14 @@ const io = socketio(server, {
     
     transports: ['websocket']});
 //const io = socketio(server);
-
+const reactPath = path.join(__dirname, 'client/build');
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 //app.use(cors())
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(reactPath, "index.html"));
+  });
 
 //Store the room ids mapping to the room property object 
 //The room property object looks like this {roomid:str, players:Array(2)}
