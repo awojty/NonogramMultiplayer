@@ -15,24 +15,30 @@
 
 
 body{
+  display: flex;
+  height: 100vh;
+  min-height: min-content;
+  align-items: center;
+  justify-content: center;
   
   background: var(--dark-blue);
   background: linear-gradient(180deg, var(--dark-blue) 80%, var(--mid-blue) 100%);
   background-repeat: no-repeat;
+  overflow: none;
   
 }
 
-/* #root{
+#root{
   min-width: 300px;
-  width: calc(var(--square-width)*3)
-} */
+  /* //width: calc(var(--square-width)*3) */
+}
 
-/* .board{
+.board{
   display: grid;
   width: max-content;
   min-height: min-content;
   grid-template-columns: repeat(3, auto);
-} */
+}
 
 
 .square{
