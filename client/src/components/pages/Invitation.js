@@ -17,8 +17,8 @@ import { useParams } from "react-router-dom";
 
 import socketIOClient from 'socket.io-client'
 //TODO - choises a game froma  alink 
-//const ENDPOINT = 'http://localhost:4000/'
-const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
+const ENDPOINT = 'http://localhost:4000/'
+//const ENDPOINT = 'http://multi-nonogram.herokuapp.com/'
 
 class Invitation extends React.Component {
     constructor(props){
@@ -50,12 +50,12 @@ class Invitation extends React.Component {
 
 
   // get the username from route params
-        const { room, gameid } = useParams();
+        //const { room, gameid } = useParams();
 
         let newState={
-            room:room,
-            selectedGame: gameid,
-            gameid:gameid
+            room:this.props.match.params.room,
+            selectedGame: this.props.match.params.gameid,
+            gameid:this.props.match.params.gameid
         
         }
 

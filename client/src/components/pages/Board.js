@@ -83,6 +83,8 @@ class Board extends Component {
 
     console.log("newstate", newState)
 
+    //TODO: get eh current number of players from the room and if gfreater than 1, then dont renew the game - sockets with promises?
+
     if(!this.state.started){
       this.socket.emit('newRoomJoin', {room, name, WIDTH, HEIGHT})
       this.setState({started:true})
